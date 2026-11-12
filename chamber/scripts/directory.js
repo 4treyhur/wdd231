@@ -62,10 +62,6 @@ menuBtn.addEventListener("click", () => {
   menuBtn.setAttribute("aria-expanded", open);
 });
 
-// Footer dates
-document.querySelector("#year").textContent = new Date().getFullYear();
-document.querySelector("#modified").textContent = document.lastModified;
-
 // Init
 try {
   const savedTheme = localStorage.getItem("theme");
