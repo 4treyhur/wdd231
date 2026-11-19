@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Directory | Pachuca Chamber of Commerce</title>
-  <meta name="description" content="Browse the business directory of the Pachuca Chamber of Commerce: local restaurants, shops, mining heritage tours and services in Pachuca, Hidalgo.">
+  <title>Pachuca Chamber of Commerce | Home</title>
+  <meta name="description" content="The Pachuca Chamber of Commerce connects local businesses, hosts networking events and encourages shopping local in Pachuca, Hidalgo.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/directory.css">
+  <link rel="stylesheet" href="styles/home.css">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
@@ -17,8 +18,10 @@
     gtag('js', new Date());
     gtag('config', 'G-XXXXXXXXXX');
   </script>
-  <script src="scripts/directory.js" defer></script>
+  <script src="scripts/site.js" defer></script>
   <script src="scripts/getdates.js" defer></script>
+  <script src="scripts/weather.js" defer></script>
+  <script src="scripts/spotlights.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -37,23 +40,63 @@
       </button>
     </div>
     <nav id="main-nav" aria-label="Main">
-      <a href="index.html">Home</a>
-      <a href="directory.html" aria-current="page">Directory</a>
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="directory.html">Directory</a>
       <a href="join.html">Join</a>
       <a href="discover.html">Discover</a>
     </nav>
   </header>
 
-  <main>
-    <h1>Directory</h1>
-    <p class="intro">Local businesses that are members of the Pachuca Chamber of Commerce. Support them by shopping, eating and hiring local.</p>
+  <main class="home">
+    <section class="hero" aria-labelledby="hero-title">
+      <img src="images/hero.svg" width="1600" height="700" fetchpriority="high"
+           alt="Illustration of Pachuca with its colorful hillside houses and the Reloj Monumental clock tower">
+      <div class="hero-content">
+        <h1 id="hero-title">Grow with Pachuca's business community</h1>
+        <p>Networking, resources and events that help local businesses thrive.</p>
+        <a class="cta" href="join.html">Join the Chamber</a>
+      </div>
+    </section>
 
-    <div class="view-toggle" role="group" aria-label="Choose directory layout">
-      <button type="button" id="grid-btn" aria-pressed="true">Grid</button>
-      <button type="button" id="list-btn" aria-pressed="false">List</button>
+    <div class="home-grid">
+      <section class="panel" id="events" aria-labelledby="events-title">
+        <h2 id="events-title">Upcoming Events</h2>
+        <ul class="events">
+          <li>
+            <time class="date" datetime="2026-11-26"><span>NOV</span>26</time>
+            <div><h3>Digital Marketing for Small Business</h3><p>Workshop · 5:00 PM · Casa de la Cultura</p></div>
+          </li>
+          <li>
+            <time class="date" datetime="2026-12-03"><span>DEC</span>03</time>
+            <div><h3>Business Networking Breakfast</h3><p>Members &amp; guests · 8:30 AM · Hotel Casa Cristo Rey</p></div>
+          </li>
+          <li>
+            <time class="date" datetime="2026-12-12"><span>DEC</span>12</time>
+            <div><h3>Shop Local Holiday Market</h3><p>Open to the public · 10:00 AM · Plaza Independencia</p></div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="panel" id="weather" aria-labelledby="weather-title">
+        <h2 id="weather-title">Pachuca Weather</h2>
+        <div class="current">
+          <img id="weather-icon" alt="" width="72" height="72" hidden>
+          <p class="temp" id="temperature">--</p>
+        </div>
+        <p id="description" class="desc">Loading weather…</p>
+        <dl class="details">
+          <dt>Wind:</dt><dd id="wind">--</dd>
+          <dt>Wind chill:</dt><dd id="windChill">--</dd>
+        </dl>
+        <h3>3-Day Forecast</h3>
+        <ul id="forecast" class="forecast"></ul>
+      </section>
+
+      <section id="spotlights" aria-labelledby="spot-title">
+        <h2 id="spot-title">Member Spotlights</h2>
+        <div id="spotlight-cards" class="spot-grid" aria-live="polite"></div>
+      </section>
     </div>
-
-    <section id="directory" class="grid" aria-live="polite" aria-label="Member businesses"></section>
   </main>
 
   <footer class="site-footer">
@@ -70,11 +113,9 @@
       <li><a href="https://www.instagram.com" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm5 3.500a4.500 4.500 0 1 1 0 9 4.500 4.500 0 0 1 0-9zm0 2a2.500 2.500 0 1 0 0 5 2.500 2.500 0 0 0 0-5zM17.500 5.800a1.100 1.100 0 1 1 0 2.200 1.100 1.100 0 0 1 0-2.200z"/></svg></a></li>
     </ul>
     <div class="credits">
-      <footer>
-        <p>WDD231 Directory Class Project</p>
-        <p>©<span id="year"></span> 🦗 Aaron Pazaran 🦗 Pachuca, México</p>
-        <p id="lastModified"></p>
-    </footer>
+      <p>WDD231 Chamber Class Project</p>
+      <p>©<span id="year"></span> 🦗 Aaron Pazaran 🦗 Pachuca, México</p>
+      <p id="lastModified"></p>
     </div>
   </footer>
 </body>

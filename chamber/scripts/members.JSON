@@ -1,0 +1,94 @@
+{
+  "members": [
+    {
+      "name": "Pastes El Minero",
+      "tagline": "Pachuca's original Cornish-Mexican pastes",
+      "address": "Av. Revolución 120, Centro, Pachuca, Hgo.",
+      "phone": "771-555-0101",
+      "email": "info@pasteselminero.example",
+      "url": "pasteselminero.example",
+      "logo": "images/logos/pastes-el-minero.svg",
+      "level": "Gold"
+    },
+    {
+      "name": "Café Reloj Monumental",
+      "tagline": "Coffee from Hidalgo's sierra, roasted daily",
+      "address": "Plaza Independencia 8, Centro, Pachuca, Hgo.",
+      "phone": "771-555-0122",
+      "email": "info@relojcafe.example",
+      "url": "relojcafe.example",
+      "logo": "images/logos/cafe-reloj-monumental.svg",
+      "level": "Silver"
+    },
+    {
+      "name": "Plata y Cantera",
+      "tagline": "Handmade silver jewelry and stonework",
+      "address": "Calle Guerrero 45, Centro, Pachuca, Hgo.",
+      "phone": "771-555-0143",
+      "email": "info@platacantera.example",
+      "url": "platacantera.example",
+      "logo": "images/logos/plata-y-cantera.svg",
+      "level": "Gold"
+    },
+    {
+      "name": "Tours Real del Monte",
+      "tagline": "Mine tours and mountain day trips",
+      "address": "Calle Matamoros 33, Centro, Pachuca, Hgo.",
+      "phone": "771-555-0165",
+      "email": "info@toursrdm.example",
+      "url": "toursrdm.example",
+      "logo": "images/logos/tours-real-del-monte.svg",
+      "level": "Silver"
+    },
+    {
+      "name": "Barbacoa La Hacienda",
+      "tagline": "Slow-cooked barbacoa, family recipe",
+      "address": "Blvd. Felipe Ángeles 210, Pachuca, Hgo.",
+      "phone": "771-555-0187",
+      "email": "info@barbacoalahacienda.example",
+      "url": "barbacoalahacienda.example",
+      "logo": "images/logos/barbacoa-la-hacienda.svg",
+      "level": "Bronze"
+    },
+    {
+      "name": "Librería La Bella Airosa",
+      "tagline": "Books, comics and local authors",
+      "address": "Av. Juárez 97, Centro, Pachuca, Hgo.",
+      "phone": "771-555-0209",
+      "email": "info@bellaairosa.example",
+      "url": "bellaairosa.example",
+      "logo": "images/logos/libreria-la-bella-airosa.svg",
+      "level": "Bronze"
+    },
+    {
+      "name": "Tecnoparque Pachuca",
+      "tagline": "IT support for small businesses",
+      "address": "Blvd. Valle de San Javier 15, Pachuca, Hgo.",
+      "phone": "771-555-0231",
+      "email": "info@tecnoparque.example",
+      "url": "tecnoparque.example",
+      "logo": "images/logos/tecnoparque-pachuca.svg",
+      "level": "Gold"
+    },
+    {
+      "name": "Panadería La Reforma",
+      "tagline": "Fresh bread and pastries since 1962",
+      "address": "Calle Hidalgo 61, Centro, Pachuca, Hgo.",
+      "phone": "771-555-0254",
+      "email": "info@panaderialareforma.example",
+      "url": "panaderialareforma.example",
+      "logo": "images/logos/panaderia-la-reforma.svg",
+      "level": "Silver"
+    },
+    {
+      "name": "Hotel Casa Cristo Rey",
+      "tagline": "Boutique stays in downtown Pachuca",
+      "address": "Calle Allende 12, Centro, Pachuca, Hgo.",
+      "phone": "771-555-0276",
+      "email": "info@casacristorey.example",
+      "url": "casacristorey.example",
+      "logo": "images/logos/hotel-casa-cristo-rey.svg",
+      "level": "Gold"
+    }
+  ]
+}
