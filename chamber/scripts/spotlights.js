@@ -21,9 +21,9 @@ async function loadSpotlights() {
 
     spotlightBox.innerHTML = picks.map(m => `
       <article class="spot">
-        <img src="${m.logo}" alt="${m.name} logo" width="88" height="88" loading="lazy">
+        <img class="logo" src="${m.logo}" alt="${m.name} logo" width="88" height="88" loading="lazy">
         <h3>${m.name}</h3>
-        <p class="tag">${m.tagline}</p>
+        <p><em>${m.tagline}</em></p>
         <span class="level">${m.level} Member</span>
         <address>
           <span>${m.address}</span>

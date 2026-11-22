@@ -1,4 +1,4 @@
-/* Home page styles (header, footer, colors and base live in directory.css) */
+/* Home page (base, header, footer and cards live in directory.css) */
 main.home { max-width: none; padding: 0; }
 
 /* Hero */
@@ -7,59 +7,46 @@ main.home { max-width: none; padding: 0; }
 .hero-content {
   position: absolute; left: clamp(1rem, 5vw, 4rem); bottom: 10%; max-width: min(34rem, 85%);
   padding: 1.25rem 1.5rem; border-left: 4px solid var(--secondary); border-radius: 8px;
-  background: rgba(26, 29, 32, .82); color: #F7F6F2;
+  background: var(--ink); color: var(--paper);
 }
-.hero-content h1 { color: inherit; font-size: clamp(1.6rem, 3.2vw, 2.4rem); }
-.hero-content p { margin: .6rem 0 1rem; }
-.cta {
-  display: inline-block; padding: .7rem 1.5rem; border-radius: 6px; font-weight: 700; text-decoration: none;
-  background: var(--secondary); color: #1A1D20;
-}
-.cta:hover { background: #E08A6D; }
+.hero-content h1 { font-size: clamp(1.6rem, 3.2vw, 2.4rem); }
+.cta { display: inline-block; padding: .7rem 1.5rem; border-radius: 6px; background: var(--secondary); color: var(--ink); font-weight: 700; text-decoration: none; }
 
-/* Content layout: 2 columns on large screens, stacked on mobile */
+/* Two columns on large screens, stacked on mobile */
 .home-grid {
-  display: grid; gap: 1.5rem; max-width: 1200px; margin: 0 auto; padding: 2rem clamp(1rem, 4vw, 2rem) 3rem;
-  grid-template-areas: "events weather" "spotlights spotlights"; grid-template-columns: 3fr 2fr;
+  display: grid; grid-template-columns: 3fr 2fr; gap: 1.5rem; max-width: 1200px; margin: 0 auto;
+  padding: 2rem clamp(1rem, 4vw, 2rem) 3rem;
 }
-#events { grid-area: events; }
-#weather { grid-area: weather; }
-#spotlights { grid-area: spotlights; }
-.home-grid h2 { font: 600 1.5rem/1.2 var(--font-head); margin-bottom: 1rem; }
+#spotlights { grid-column: 1 / -1; }
+.home-grid h2 { margin-bottom: 1rem; font: 600 1.5rem/1.2 var(--font-head); }
 .home-grid h3 { font: 600 1.05rem/1.3 var(--font-head); }
-
-.panel { background: var(--surface); border-top: 4px solid var(--secondary); border-radius: 10px; padding: 1.25rem; }
+.panel, .spot { padding: 1.25rem; }
 
 /* Events */
-.events { list-style: none; padding: 0; display: grid; gap: 1rem; }
-.events li { display: flex; gap: 1rem; align-items: center; }
-.events p { font-size: .9rem; }
-.date {
-  flex: none; width: 64px; padding: .4rem 0; text-align: center; border-radius: 8px;
-  background: var(--primary); color: var(--on-primary); font: 700 1.5rem/1 var(--font-head);
-}
+.events { display: grid; gap: 1rem; padding: 0; list-style: none; }
+.events li { display: flex; align-items: center; gap: 1rem; }
+.date { flex: none; width: 64px; padding: .4rem 0; border-radius: 8px; background: var(--primary); color: var(--on-primary); text-align: center; font: 700 1.5rem/1 var(--font-head); }
 .date span { display: block; font: 600 .7rem var(--font-body); letter-spacing: .08em; }
 
 /* Weather */
 .current { display: flex; align-items: center; gap: .5rem; }
 .temp { font: 700 2.6rem/1 var(--font-head); }
-.desc { text-transform: capitalize; margin-bottom: .75rem; }
-.details { display: grid; grid-template-columns: auto 1fr; gap: .2rem .6rem; font-size: .9rem; margin-bottom: 1rem; }
+.desc { margin-bottom: .75rem; text-transform: capitalize; }
+.details { display: grid; grid-template-columns: auto 1fr; gap: .2rem .6rem; margin-bottom: 1rem; font-size: .9rem; }
 .details dt { font-weight: 700; }
-.forecast { list-style: none; padding: 0; display: grid; gap: .4rem; margin-top: .5rem; }
+.forecast { display: grid; padding: 0; list-style: none; }
 .forecast li { display: flex; justify-content: space-between; gap: 1rem; padding: .45rem 0; border-top: 1px solid var(--line); font-size: .9rem; }
 
 /* Spotlights */
-.spot-grid { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-.spot { background: var(--surface); border-top: 4px solid var(--secondary); border-radius: 10px; padding: 1.25rem; text-align: center; }
-.spot img { width: 88px; height: 88px; border-radius: 8px; margin-bottom: .6rem; }
-.spot .tag { font-size: .85rem; font-style: italic; margin-bottom: .6rem; }
-.level { display: inline-block; margin-bottom: .6rem; padding: .15rem .7rem; border-radius: 999px; font-size: .75rem; font-weight: 700; background: var(--primary); color: var(--on-primary); }
-.spot address { font-style: normal; font-size: .9rem; display: grid; gap: .15rem; overflow-wrap: anywhere; }
-.error { color: var(--text); font-style: italic; }
+.spot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+.spot { text-align: center; }
+.spot .logo { display: block; margin: 0 auto .6rem; }
+.spot p { margin: .2rem 0 .6rem; }
+.level { display: inline-block; margin-bottom: .6rem; padding: .15rem .7rem; border-radius: 1rem; background: var(--primary); color: var(--on-primary); font-size: .75rem; font-weight: 700; }
+.spot address { display: grid; gap: .15rem; font-style: normal; font-size: .9rem; overflow-wrap: anywhere; }
 
 @media (max-width: 800px) {
-  .home-grid { grid-template-areas: "events" "weather" "spotlights"; grid-template-columns: 1fr; }
+  .home-grid { grid-template-columns: 1fr; }
   .hero img { aspect-ratio: 4 / 3; }
   .hero-content { position: static; max-width: none; border-radius: 0; }
 }
