@@ -9,8 +9,11 @@ async function renderMembers() {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const { members } = await response.json();
 
-    container.innerHTML = members.map(m => `
-      <article class="card">
+    container.replaceChildren();
+    members.forEach(m => {
+      const card = document.createElement("article");
+      card.className = "card";
+      card.innerHTML = `
         <div class="card-head">
           <h2>${m.name}</h2>
           <p>${m.tagline}</p>
@@ -23,8 +26,9 @@ async function renderMembers() {
             <dt>URL:</dt><dd><a href="https://${m.url}" target="_blank" rel="noopener">${m.url}</a></dd>
             <dd class="badge">Membership: ${m.level}</dd>
           </dl>
-        </div>
-      </article>`).join("");
+        </div>`;
+      container.append(card);
+    });
   } catch (error) {
     console.error("Directory error:", error);
     container.innerHTML = "<p>The directory is not available right now.</p>";

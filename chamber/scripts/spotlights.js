@@ -19,8 +19,11 @@ async function loadSpotlights() {
     const eligible = members.filter(m => ["gold", "silver"].includes(m.level.toLowerCase()));
     const picks = shuffle(eligible).slice(0, 3);
 
-    spotlightBox.innerHTML = picks.map(m => `
-      <article class="spot">
+    spotlightBox.replaceChildren();
+    picks.forEach(m => {
+      const card = document.createElement("article");
+      card.className = "spot";
+      card.innerHTML = `
         <img class="logo" src="${m.logo}" alt="${m.name} logo" width="88" height="88" loading="lazy">
         <h3>${m.name}</h3>
         <p><em>${m.tagline}</em></p>
@@ -29,8 +32,9 @@ async function loadSpotlights() {
           <span>${m.address}</span>
           <a href="tel:${m.phone.replace(/\D/g, "")}">${m.phone}</a>
           <a href="https://${m.url}" target="_blank" rel="noopener">${m.url}</a>
-        </address>
-      </article>`).join("");
+        </address>`;
+      spotlightBox.append(card);
+    });
   } catch (error) {
     console.error("Spotlights error:", error);
     spotlightBox.innerHTML = '<p class="error">Member spotlights are not available right now.</p>';
